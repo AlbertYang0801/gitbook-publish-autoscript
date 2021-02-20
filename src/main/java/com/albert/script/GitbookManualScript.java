@@ -32,16 +32,20 @@ public class GitbookManualScript {
      */
     private final static String GITHUB_BRANCH = "main";
 
-    public static void publish() {
-        GitbookHandler gitbookHandler = new GitbookHandler();
-        CopyHandler copyHandler = new CopyHandler();
-        GitHandler gitHandler = new GitHandler();
+    static {
         Handler.configInfo = ConfigInfo.builder()
                 .gitbookPath(GITBOOK_PATH)
                 .githubProjectPath(GITHUB_PROJECT_PATH)
                 .githubRemote(GITHUB_REMOTE)
                 .githubBranch(GITHUB_BRANCH)
                 .build();
+    }
+
+    public static void publish() {
+        GitbookHandler gitbookHandler = new GitbookHandler();
+        CopyHandler copyHandler = new CopyHandler();
+        GitHandler gitHandler = new GitHandler();
+
         gitbookHandler.setNextNode(copyHandler);
         copyHandler.setNextNode(gitHandler);
         //执行信息

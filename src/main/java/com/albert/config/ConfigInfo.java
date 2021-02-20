@@ -1,8 +1,10 @@
 package com.albert.config;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,6 +15,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Configuration
 public class ConfigInfo {
 

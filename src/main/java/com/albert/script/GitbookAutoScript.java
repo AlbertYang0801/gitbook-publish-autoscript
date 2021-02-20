@@ -40,12 +40,14 @@ public class GitbookAutoScript {
     }
 
     @Scheduled(cron = "${auto.sync.gitbook.cron}")
-    public void publish() {
+    public void scheduledPublish() {
+        log.info("start sync gitbook tsak");
         gitbookHandler.setNextNode(copyHandler);
         copyHandler.setNextNode(gitHandler);
         //执行信息
         String msg = gitbookHandler.work();
         System.out.println(msg);
+        log.info("sync gitbook stak end");
     }
 
 
