@@ -18,7 +18,6 @@ public class FileCopyUtils {
      *
      * @param sourceFilePath 源文件夹名称
      * @param newFilePaht    指定文件夹名称
-     * @throws IOException
      */
     public static void copyFile(String sourceFilePath, String newFilePaht) throws IOException {
         //目标源文件夹
@@ -33,7 +32,6 @@ public class FileCopyUtils {
      *
      * @param source  源文件夹
      * @param newFile 指定文件夹
-     * @throws IOException
      */
     public static void copy(File source, File newFile) throws IOException {
         // 判断源目录是不是一个目录
@@ -44,7 +42,9 @@ public class FileCopyUtils {
         //创建目标目录的file对象
         if (!newFile.exists()) {
             //不存在就创建文件夹
-            newFile.mkdir();
+            if(!newFile.mkdir()){
+                return;
+            }
         }
         //如果源文件存在就复制
         if (source.exists()) {
@@ -67,7 +67,7 @@ public class FileCopyUtils {
 
                     byte[] bs = new byte[1026];
 
-                    int count = 0;
+                    int count;
                     //循环把源文件的内容写入新文件
                     while ((count = in.read(bs, 0, bs.length)) != -1) {
                         out.write(bs, 0, count);

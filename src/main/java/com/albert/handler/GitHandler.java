@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GitHandler extends Handler {
 
-    private final String addCommand = "git add .";
+    private final static String ADD_COMMAND = "git add .";
     private String commitCommand = "git commit -m {msg}";
     private String pushCommand = "git push {remote} {branch}";
 
@@ -26,7 +26,7 @@ public class GitHandler extends Handler {
                     .replace("{branch}", configInfo.getGithubBranch());
 
             //需要执行的git命令
-            String[] commands = {addCommand, commitCommand, pushCommand};
+            String[] commands = {ADD_COMMAND, commitCommand, pushCommand};
             ShellUtils.exec(configInfo.getGithubProjectPath(), commands);
             System.out.println("第三步：将项目推送到github成功!");
         } catch (Exception e) {

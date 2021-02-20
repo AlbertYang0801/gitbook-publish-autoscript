@@ -42,7 +42,6 @@ public class ShellUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     /**
@@ -55,8 +54,8 @@ public class ShellUtils {
         InputStream in = process.getInputStream();
         Reader reader = new InputStreamReader(in);
         BufferedReader bReader = new BufferedReader(reader);
-        for (String res = ""; (res = bReader.readLine()) != null; ) {
-            resStr.append(res + "\n");
+        for (String res; (res = bReader.readLine()) != null; ) {
+            resStr.append(res).append("\n");
         }
         System.out.println(resStr.toString());
         bReader.close();
