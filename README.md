@@ -15,7 +15,7 @@
 
 本项目是一个gitbook一键同步脚本，支持手动同步和定时同步。
 
-能自动按图中顺序自动`gitbook build`，将生成的`_book`目录下所有文件复制到`github对应的本地项目`目录，然后提交到`github`上。
+按照图中顺序自动`gitbook build`，将生成的`_book`目录下所有文件复制到`github对应的本地项目`目录，然后提交到`github`上。
 
 ![脚本执行流程](https://cdn.jsdelivr.net/gh/AlbertYang0801/pic-bed@main/img/20210220183456.png)
 
