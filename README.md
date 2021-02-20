@@ -85,15 +85,15 @@ private final static String GITHUB_BRANCH = "main";
 - 定时同步gitbook的cron表达式
 
 ```java
-
+#gitbook本地目录
 gitbook.path=/Users/yangjunwei/gitbook
-
+#github项目本地路径
 github.project.path=/Users/yangjunwei/IdeaProjects/gitbook-technology
-
+#github的remote值
 github.remote=origin
-
+#github分支名称
 github.branch=main
-
+#定时同步gitbook的cron表达式
 auto.sync.gitbook.cron='0 0 23 * * *'
 ```
 
