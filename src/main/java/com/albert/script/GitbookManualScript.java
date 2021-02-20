@@ -20,7 +20,7 @@ public class GitbookManualScript {
      */
     private final static String GITBOOK_PATH = "/Users/yangjunwei/gitbook";
     /**
-     * gitbook目录
+     * github对应本地项目目录
      */
     private final static String GITHUB_PROJECT_PATH = "/Users/yangjunwei/IdeaProjects/gitbook-technology";
     /**

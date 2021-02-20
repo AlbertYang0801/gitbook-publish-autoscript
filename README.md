@@ -1,10 +1,22 @@
 # gitbook-publish-autoscript
 
 #### 介绍
-gitbook自动发布脚本
+
+本项目是一个gitbook一键同步脚本，支持手动同步和定时同步。
+
+按图中顺序自动`gitbook build`，将生成的`_book`目录下所有文件复制到`github对应的本地项目`目录，然后提交到`github`上。
+
+![脚本执行流程](/Users/yangjunwei/chorme/未命名文件 (1).png)
+
+
 
 #### 软件架构
+
+
+
 软件架构说明
+
+
 
 
 #### 安装教程
@@ -15,9 +27,15 @@ gitbook自动发布脚本
 
 #### 使用说明
 
+##### 手动同步
+
 1.  xxxx
 2.  xxxx
 3.  xxxx
+
+##### 定时同步
+
+
 
 #### 参与贡献
 
