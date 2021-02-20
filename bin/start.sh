@@ -27,7 +27,7 @@ JVM_OPTS="
 "
 
 start() {
-nohup java $JVM_OPTS -Dlogging.config=$PORTAL_HOME/config/log4j2-spring.xml -jar $PORTAL_HOME/lib/cactus-1.0.0.jar &
+nohup java $JVM_OPTS -Dlogging.config=$PORTAL_HOME/config/log4j2-spring.xml -jar $PORTAL_HOME/lib/gitbook-publish-autoscript-1.0-SNAPSHOT.jar &
 echo -e '\r'
 }
 logs_dir=$PORTAL_HOME/logs

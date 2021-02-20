@@ -16,7 +16,7 @@ import com.albert.handler.Handler;
 public class GitbookManualScript {
 
     /**
-     * gitbook目录
+     * gitbook本地目录
      */
     private final static String GITBOOK_PATH = "/Users/yangjunwei/gitbook";
     /**
