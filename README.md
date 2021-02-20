@@ -1,6 +1,6 @@
 
 
-# gitbook-publish-autoscript
+# gitbook一键同步github脚本
 
 * [gitbook-publish-autoscript](#gitbook-publish-autoscript)
     * [介绍](#介绍)
@@ -9,8 +9,6 @@
       * [手动同步](#手动同步)
       * [定时同步](#定时同步)
     * [安装教程](#安装教程)
-
-
 
 
 ### 介绍
