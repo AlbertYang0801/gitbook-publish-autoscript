@@ -1,103 +1,80 @@
 
 
-# gitbook一键同步github脚本
-
-* [gitbook-publish-autoscript](#gitbook-publish-autoscript)
-    * [介绍](#介绍)
-    * [要求](#要求)
-    * [使用说明](#使用说明)
-      * [手动同步](#手动同步)
-      * [定时同步](#定时同步)
-    * [安装教程](#安装教程)
+## Gitbook一键同步Github脚本
 
 
 ### 介绍
 
-本项目是一个gitbook一键同步脚本，支持手动同步和定时同步。
+本项目是一个`gitbook一键发布脚本`，解决`Gitbook`发布到`GitHub`步骤的繁琐，支持手动同步和定时同步。
 
-能按照图中的先后顺序自动执行。首先自动`gitbook build`，将生成的`_book`目录下所有文件复制到`github对应的本地项目`目录，然后提交到`github`上。
+### 传统发布流程
 
 ![脚本执行流程](https://cdn.jsdelivr.net/gh/AlbertYang0801/pic-bed@main/img/20210220183456.png)
 
-- gitbook build
+1. 编写md文章。
 
-  > 执行完成之后在gitbook目录下的`_book`文件夹下面会生成静态文件。
+2. 使用`gitbook build`命令生成html静态文件，使用后会在`gitbook基础文件目录`下的`_book`文件夹生成静态文件。
 
-- cpoy file
+3. 复制`_book`文件夹下所有文件到`java项目`根路径下。
 
-  > 将`_book`文件夹下面的所有文件复制到本地项目路径下。
+4. 使用git命令将`java项目`新增内容同步到github。
 
-- push Github
-
-  > 提交本地项目新增内容到GitHub。
-
-
-
-###  要求
-
-- JDK 1.8
+   *由于发布流程的第2、3、4步太过繁琐，故开发一个脚本，按照顺序执行2、3、4步完成自动发布的功能。*
 
 ### 使用说明
 
 #### 手动同步
 
-> 不需要部署服务器
+> 不需要部署服务器。
 
 1.  跳转到手动脚本：[GitbookManualScript.java](src/main/java/com/albert/script/GitbookManualScript.java)
 2.  手动指定必要参数
-
-- gitbook本地目录
-- github对应本地项目目录
-- github对应remote
-- github分支名称
-
-```java
-/**
- * gitbook本地目录
- */
-private final static String GITBOOK_PATH = "/Users/yangjunwei/gitbook";
-/**
- * github对应本地项目目录
- */
-private final static String GITHUB_PROJECT_PATH = "/Users/yangjunwei/IdeaProjects/gitbook-technology";
-/**
- * github对应remote
- */
-private final static String GITHUB_REMOTE = "origin";
-/**
- * github分支名称
- */
-private final static String GITHUB_BRANCH = "main";
-```
+    ```java
+    /**
+     * gitbook本地目录
+     */
+    private final static String GITBOOK_PATH = "/Users/yangjunwei/gitbook";
+    /**
+     * github对应本地项目目录
+     */
+    private final static String GITHUB_PROJECT_PATH = "/Users/yangjunwei/IdeaProjects/gitbook-technology";
+    /**
+     * github对应remote
+     */
+    private final static String GITHUB_REMOTE = "origin";
+    /**
+     * github分支名称
+     */
+    private final static String GITHUB_BRANCH = "main";
+    ```
 
 3. 执行main()方法
 
 #### 定时同步
 
-> 可部署到服务器，参考安装教程
+> 可部署到服务器，参考安装教程。
 
 1. 修改配置文件：[application.properties](config/application.properties)
 
-- gitbook本地目录
-- github对应本地项目目录
-- github对应remote
-- github分支名称
-- 定时同步gitbook的cron表达式
-
-```java
-#gitbook本地目录
-gitbook.path=/Users/yangjunwei/gitbook
-#github项目本地路径
-github.project.path=/Users/yangjunwei/IdeaProjects/gitbook-technology
-#github的remote值
-github.remote=origin
-#github分支名称
-github.branch=main
-#定时同步gitbook的cron表达式
-auto.sync.gitbook.cron='0 0 23 * * *'
-```
+    ```java
+    #gitbook本地目录
+    gitbook.path=/Users/yangjunwei/gitbook
+    #github项目本地路径
+    github.project.path=/Users/yangjunwei/IdeaProjects/gitbook-technology
+    #github的remote值
+    github.remote=origin
+    #github分支名称
+    github.branch=main
+    #定时同步gitbook的cron表达式
+    auto.sync.gitbook.cron='0 0 23 * * *'
+    ```
 
 2.启动 [Application.java](src/main/java/com/albert/Application.java)
+
+###  项目要求
+
+- JDK 1.8
+- Apache-maven
 
 ### 安装教程
 
