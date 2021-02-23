@@ -9,7 +9,7 @@
 
 ### 传统发布流程
 
-![脚本执行流程](https://cdn.jsdelivr.net/gh/AlbertYang0801/pic-bed@main/img/20210220183456.png)
+![脚本执行流程](https://cdn.jsdelivr.net/gh/AlbertYang0801/pic-bed@main/img/20210224002103.png)
 
 1. 编写md文章。
 
