@@ -4,7 +4,7 @@
 
 ### 介绍
 
-本项目是一个 `GitBook 一键发布脚本`，解决 `GitBook` 发布到 `GitHub` 步骤的繁琐，支持手动同步和定时同步。
+本项目是一个 `GitBook一键发布脚本`，解决 `GitBook` 发布到 `GitHub` 步骤的繁琐，支持手动同步和定时同步。
 
 ### 传统发布流程
 
@@ -12,11 +12,11 @@
 
 1. 编写 `md` 文章。
 
-2. 使用 `gitbook build` 命令生成 `html` 静态文件，使用后会在 `GitBook` 基础文件目录`下的 `_book` 文件夹生成静态文件。
+2. 使用 `gitbook build` 命令生成 `html` 静态文件，使用后会在 `GitBook` 基础文件目录下的 `_book` 文件夹生成静态文件。
 
-3. 复制 `_book` 文件夹下所有文件到 `Java项目` 根路径下。
+3. 复制 `_book` 文件夹下所有文件到` Java` 项目根路径下。
 
-4. 使用 `Git` 相关命令将 Java项目 `新增内容同步到 `GitHub`。
+4. 使用 `Git` 相关命令将 `Java` 项目新增内容同步到 `GitHub`。
 
    *由于发布流程的第 2、3、4 步太过繁琐，故开发一个脚本，按照顺序执行 2、3、4 步完成自动发布的功能。*
 
@@ -46,7 +46,7 @@
      * github分支名称
      */
     private final static String GITHUB_BRANCH = "main";
-```
+    ```
     
 3. 执行 `main()` 方法
 
@@ -68,6 +68,7 @@
     #定时同步gitbook的cron表达式
     auto.sync.gitbook.cron='0 0 23 * * *'
     ```
+
 
 2.启动： [Application.java](src/main/java/com/albert/Application.java)
 
@@ -99,3 +100,4 @@
    - 停止
 
      执行 `bin` 目录下的 `stop.sh`
+
